@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">HabitQuestTNUV</string>
+    <string name="habits_goodhabits">Good habits</string>
+    <string name="habits_levelcount">Level 14</string>
+    <string name="habits_habitname">Running</string>
+    <string name="habits_habitdesc">For at least 30 min</string>
+    <string name="habits_focus">Focus</string>
+    <string name="habits_focusmultiplierstart">2x</string>
+    <string name="habits_focusmultipliercurrent">2.4x</string>
+    <string name="habits_focusmultipliernext">3x</string>
 </resources>

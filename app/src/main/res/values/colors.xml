@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFA800</color>
+    <color name="habit_good">#19430F</color>
+    <color name="habit_bad">#400E0E</color>
+    <color name="habit_eventraid">#545856</color>
+    <color name="habit_daily">#606218</color>
+    <color name="profile">#1B0A2F</color>
+    <color name="button_gray">#252525</color>
 </resources>
