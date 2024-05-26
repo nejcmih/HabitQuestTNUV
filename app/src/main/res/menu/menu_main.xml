@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_good"
+        android:icon="@drawable/baseline_gpp_good_24"
+        android:title="@string/habits_goodhabits" />
+    <item
+        android:id="@+id/menu_bad"
+        android:icon="@drawable/baseline_arrow_downward_24"
+        android:title="@string/habits_badhabits" />
+</menu>

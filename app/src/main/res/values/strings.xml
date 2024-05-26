@@ -15,4 +15,17 @@
     <string name="habits_focusmultiplierstart">2x</string>
     <string name="habits_focusmultipliercurrent">2.4x</string>
     <string name="habits_focusmultipliernext">3x</string>
+    <string name="habits_focusmultipliervalue">+0.2x/day</string>
+    <string name="habits_add_new_good_habit">+ Add new good habit</string>
+    <string name="habits_add_new_bad_habit">+ Add new bad habit</string>
+    <string name="habits_hp">HP</string>
+    <string name="habits_hpcurrent">40</string>
+    <string name="habits_hphigh">100</string>
+    <string name="habits_hplow">0</string>
+    <string name="habits_badhabits">Bad habits</string>
+    <string name="habits_badhabitname">Stop smoking</string>
+    <string name="habits_badhabitdesc">Reduce tobacco usage to 0</string>
+    <string name="habits_hpmultipliervalue">+5 HP/day</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

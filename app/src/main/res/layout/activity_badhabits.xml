@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/habit_good">
-
+    android:background="@color/habit_bad" >
 
     <TextView
         android:id="@+id/habitTitle"
@@ -15,7 +12,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/kumbh_sans_bold"
-        android:text="@string/habits_goodhabits"
+        android:text="@string/habits_badhabits"
         android:textColor="@color/white"
         android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +43,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/kumbh_sans"
-        android:text="@string/habits_focus"
+        android:text="@string/habits_hp"
         android:textColor="@color/white"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -75,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:fontFamily="@font/kumbh_sans"
-        android:text="@string/habits_focusmultiplierstart"
+        android:text="@string/habits_hplow"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/habitAttributeBar"
@@ -87,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
         android:fontFamily="@font/kumbh_sans"
-        android:text="@string/habits_focusmultipliercurrent"
+        android:text="@string/habits_hpcurrent"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -103,7 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:fontFamily="@font/kumbh_sans"
-        android:text="@string/habits_focusmultipliernext"
+        android:text="@string/habits_hphigh"
         android:textAlignment="textEnd"
         android:textColor="@color/white"
         android:textStyle="bold"
@@ -141,7 +138,7 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/kumbh_sans"
-                    android:text="@string/habits_habitname"
+                    android:text="@string/habits_badhabitname"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -158,7 +155,7 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/kumbh_sans"
                     android:radius="10sp"
-                    android:text="@string/habits_habitdesc"
+                    android:text="@string/habits_badhabitdesc"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="14sp"
@@ -173,7 +170,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="6dp"
                     android:fontFamily="@font/kumbh_sans"
-                    android:text="@string/habits_focusmultipliervalue"
+                    android:text="@string/habits_hpmultipliervalue"
                     android:textColor="@color/almostwhite"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -212,7 +209,7 @@
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="75"
-        android:text="@string/habits_add_new_good_habit"
+        android:text="@string/habits_add_new_bad_habit"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:cornerRadius="15dp"
@@ -220,25 +217,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/habitScroll" />
-
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/habitScroll"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/habitScroll">
-
-    </FrameLayout>
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_main"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
