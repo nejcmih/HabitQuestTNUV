@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">HabitQuestTNUV</string>
+    <string name="daysStreakName">days</string>
+    <string name="streak">STREAK</string>
+    <string name="levelProfile">Level</string>
+    <string name="LevelExample">14</string>
+    <string name="StreakExample">22</string>
+    <string name="PlayerNameTest">NejcMihelovcevski</string>
+    <string name="PlayerTitleTest">"The Beginner of Riften"</string>
     <string name="habits_goodhabits">Good habits</string>
     <string name="habits_levelcount">Level 14</string>
     <string name="habits_habitname">Running</string>
@@ -8,8 +15,4 @@
     <string name="habits_focusmultiplierstart">2x</string>
     <string name="habits_focusmultipliercurrent">2.4x</string>
     <string name="habits_focusmultipliernext">3x</string>
-    <string name="PlayerNameTest">NejcMihelovcevski</string>
-    <string name="PlayerTitleTest">"The Beginner of Riften"</string>
-    <string name="habits_add_new_good_habit">+ Add new good habit</string>
-    <string name="habits_focusmultipliervalue">+0.2x/day</string>
 </resources>
