@@ -10,4 +10,6 @@
     <string name="habits_focusmultipliernext">3x</string>
     <string name="PlayerNameTest">NejcMihelovcevski</string>
     <string name="PlayerTitleTest">"The Beginner of Riften"</string>
+    <string name="habits_add_new_good_habit">+ Add new good habit</string>
+    <string name="habits_focusmultipliervalue">+0.2x/day</string>
 </resources>
