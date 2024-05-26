@@ -1,6 +1,8 @@
 package si.uni_lj.fe.tnuv.habitquesttnuv;
 
-public class Habit {
+import android.os.Bundle;
+
+public abstract class Habit {
     private int id;
     private String title;
     private float difficulty;
@@ -75,4 +77,6 @@ public class Habit {
     public void setDone(boolean done) {
         this.done = done;
     }
+
+    //protected abstract void onCreate(Bundle savedInstanceState);
 }

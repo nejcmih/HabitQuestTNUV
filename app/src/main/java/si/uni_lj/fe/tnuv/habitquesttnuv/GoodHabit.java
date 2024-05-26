@@ -1,8 +1,18 @@
 package si.uni_lj.fe.tnuv.habitquesttnuv;
 
-public class GoodHabit extends Habit{
+import androidx.appcompat.app.AppCompatActivity;
 
-    public GoodHabit(String title, float difficulty, int maxProgress) {
+import android.os.Bundle;
+
+public class GoodHabit extends AppCompatActivity {
+
+    /*public GoodHabit(String title, float difficulty, int maxProgress) {
         super(title, difficulty, maxProgress);
+    }*/
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_goodhabits);
     }
 }
