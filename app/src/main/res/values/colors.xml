@@ -10,4 +10,5 @@
     <color name="habit_daily">#606218</color>
     <color name="profile">#1B0A2F</color>
     <color name="button_gray">#252525</color>
+    <color name="ProfileBackground">#200c2c</color>
 </resources>
