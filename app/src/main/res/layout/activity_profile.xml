@@ -131,34 +131,38 @@
         app:layout_constraintTop_toTopOf="@+id/imageView5"
         app:srcCompat="@drawable/mec" />
 
-    <Button
+    <TextView
         android:id="@+id/habitAdd"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingVertical="3dp"
+        android:paddingHorizontal="7dp"
+        android:background="@drawable/rounded_square"
+        android:textAlignment="center"
+
         android:layout_marginStart="20dp"
         android:text="@string/StreakExample"
         android:textColor="@color/ProfileBackground"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:backgroundTint="@color/yellow"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.39" /> <!--TODO: Bolj kvadratast oblacek-->
+        app:layout_constraintVertical_bias="0.39" />
 
     <TextView
         android:id="@+id/habitTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/daysStreakName"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/habitAdd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        android:textColor="@color/white"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toEndOf="@+id/habitAdd"
         app:layout_constraintTop_toTopOf="@+id/habitAdd" />
     <!--TODO: Naredi da se streak napise S T R E A K in se lepo potegne -->
@@ -166,11 +170,12 @@
         android:id="@+id/textView11"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:letterSpacing="0.5"
         android:text="@string/streak"
         android:textAlignment="center"
-        android:textStyle="bold"
         android:textColor="@color/white"
-        android:letterSpacing="0.5"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/habitTitle"
         app:layout_constraintStart_toStartOf="@+id/habitAdd"
@@ -192,12 +197,15 @@
         android:textColor="@color/white"
         app:layout_constraintVertical_bias="0.04000002" />
 <!--TODO: Ta gumb naredi bolj kvadratast-->
-    <Button
+    <TextView
         android:id="@+id/button3"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
+        android:paddingHorizontal="7dp"
+        android:paddingVertical="3dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="@string/LevelExample"
+        android:textAlignment="center"
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/ProfileBackground"
@@ -206,6 +214,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toTopOf="@+id/textView12"
+        android:background="@drawable/rounded_square"
         android:backgroundTint="@color/white"
         />
 <!--TODO: Barvo teksta zamenjaj z backgroundom-->
@@ -316,7 +325,6 @@
         android:scaleY="2"
         app:layout_constraintStart_toStartOf="@+id/progressBar2"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
 
     <!-- TODO: REFORMAT THE IMAGEVIEWS DA JE TO LOCEN VIEW KI GA POL SEM NOT DAS-->
 
