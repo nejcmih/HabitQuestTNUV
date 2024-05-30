@@ -9,4 +9,9 @@
         android:id="@+id/menu_bad"
         android:icon="@drawable/baseline_arrow_downward_24"
         android:title="@string/habits_badhabits" />
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/profileicon"
+        android:title="@string/profileMenuTitle"
+        />
 </menu>

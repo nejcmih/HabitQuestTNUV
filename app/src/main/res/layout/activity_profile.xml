@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ProfileBackground"
+    android:id="@+id/profile"
     >
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="350dp"
+        android:layout_width="270dp"
         android:layout_height="35dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
@@ -30,7 +31,7 @@
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="300dp"
+        android:layout_width="270dp"
         android:layout_height="60dp"
         android:layout_marginTop="6dp"
         android:autoSizeMaxTextSize="25sp"
@@ -46,6 +47,25 @@
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:layout_constraintVertical_bias="0.0" />
+
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.Material3.Button.IconButton.Filled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:backgroundTint="#f3edf7"
+        app:icon="@drawable/profilesettingsicon"
+        app:iconSize="35dp"
+        app:iconTint="@color/ProfileBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.06999999" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -307,7 +327,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.060000002" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -326,15 +346,131 @@
         app:layout_constraintStart_toStartOf="@+id/progressBar2"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
+    <TextView
+        android:id="@+id/focusTextLeftProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exampleLeftFocusProfile"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.0" />
+    <!-- TODO: constrainti tukaj so weird af-->
+    <TextView
+        android:id="@+id/focusTextMiddleProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exampleMiddleFocusProfile"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/focusTextRightProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/focusTextRightExample"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.0" />
+
     <!-- TODO: REFORMAT THE IMAGEVIEWS DA JE TO LOCEN VIEW KI GA POL SEM NOT DAS-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_main"/>
+        app:menu="@menu/menu_main" />
+
+    <TextView
+        android:id="@+id/hpBarProfileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Health points"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <TextView
+        android:id="@+id/hpProfileLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/hpBarProfile"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hpBarProfile"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/hpProfileCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="65"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/hpBarProfile"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/hpBarProfile"
+        app:layout_constraintTop_toBottomOf="@+id/hpBarProfile"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <ProgressBar
+        android:id="@+id/hpBarProfile"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="30dp"
+        android:progress="60"
+        android:progressBackgroundTint="@color/white"
+        android:progressBackgroundTintMode="add"
+        android:progressTint="#821d1d"
+        android:scaleY="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/hpBarProfileTitle"
+        app:layout_constraintVertical_bias="0.79" />
+
+    <TextView
+        android:id="@+id/hpProfileRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/hpBarProfile"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="@+id/hpBarProfile"
+        app:layout_constraintTop_toBottomOf="@+id/hpBarProfile"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

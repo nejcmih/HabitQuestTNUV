@@ -31,4 +31,8 @@
     <string name="minXpExample">1000</string>
     <string name="MaxXpExample">1200</string>
     <string name="ActualXpExample">1120 XP</string>
+    <string name="profileMenuTitle">Profile</string>
+    <string name="exampleLeftFocusProfile">2x</string>
+    <string name="exampleMiddleFocusProfile">2.4x</string>
+    <string name="focusTextRightExample">3x</string>
 </resources>
