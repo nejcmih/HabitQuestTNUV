@@ -35,4 +35,5 @@
     <string name="exampleLeftFocusProfile">2x</string>
     <string name="exampleMiddleFocusProfile">2.4x</string>
     <string name="focusTextRightExample">3x</string>
+    <string name="eventMenuTitle">Event</string>
 </resources>
