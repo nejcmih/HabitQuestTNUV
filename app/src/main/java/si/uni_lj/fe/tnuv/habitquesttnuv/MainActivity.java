@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
     GoodHabitFragment goodHabitFragment = new GoodHabitFragment();
     BadHabitFragment badHabitFragment = new BadHabitFragment();
+    DailyTasksFragment dailyTasksFragment = new DailyTasksFragment();
     EventRaidFragment eventRaidFragment = new EventRaidFragment();
     ProfileFragment profileFragment = new ProfileFragment();
 
@@ -49,6 +50,13 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                         .replace(R.id.frame_layout, badHabitFragment)
                         .commit();
                 return true;
+        }
+        else if (item.getItemId() == R.id.menu_daily) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, dailyTasksFragment)
+                    .commit();
+            return true;
         }
         else if (item.getItemId() == R.id.menu_event) {
             getSupportFragmentManager()

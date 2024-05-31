@@ -10,9 +10,9 @@ public class GoodHabit extends AppCompatActivity {
         super(title, difficulty, maxProgress);
     }*/
 
-    @Override
+    /*@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goodhabits);
-    }
+    }*/
 }

@@ -13,13 +13,13 @@
         android:id="@+id/menu_event"
         android:icon="@drawable/eventmenuicon"
         android:title="@string/habits_eventraid" />
-
-
+    <item
+        android:id="@+id/menu_daily"
+        android:icon="@drawable/baseline_assessment_24"
+        android:title="@string/habits_dailytasks" />
     <item
         android:id="@+id/menu_profile"
         android:icon="@drawable/profileicon"
-        android:title="@string/profileMenuTitle"
-        />
-
+        android:title="@string/profileMenuTitle" />
 
 </menu>
