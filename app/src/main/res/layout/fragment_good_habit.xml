@@ -72,7 +72,8 @@
             android:progressTint="@color/yellow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/habitAttribute" />
+            app:layout_constraintTop_toBottomOf="@+id/habitAttribute"
+            android:scaleY="2" />
 
         <TextView
             android:id="@+id/habitAttributeLow"
