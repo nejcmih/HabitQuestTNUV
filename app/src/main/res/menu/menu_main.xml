@@ -10,14 +10,13 @@
         android:icon="@drawable/baseline_arrow_downward_24"
         android:title="@string/habits_badhabits" />
     <item
-        android:id="@+id/event"
+        android:id="@+id/menu_event"
         android:icon="@drawable/eventmenuicon"
-        android:title="@string/eventMenuTitle"
-        />
+        android:title="@string/habits_eventraid" />
 
 
     <item
-        android:id="@+id/profile"
+        android:id="@+id/menu_profile"
         android:icon="@drawable/profileicon"
         android:title="@string/profileMenuTitle"
         />

@@ -28,8 +28,11 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.menu_good);
     }
+
     GoodHabitFragment goodHabitFragment = new GoodHabitFragment();
     BadHabitFragment badHabitFragment = new BadHabitFragment();
+    EventRaidFragment eventRaidFragment = new EventRaidFragment();
+    ProfileFragment profileFragment = new ProfileFragment();
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
@@ -46,6 +49,20 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                         .replace(R.id.frame_layout, badHabitFragment)
                         .commit();
                 return true;
+        }
+        else if (item.getItemId() == R.id.menu_event) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, eventRaidFragment)
+                    .commit();
+            return true;
+        }
+        else if (item.getItemId() == R.id.menu_profile) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, profileFragment)
+                    .commit();
+            return true;
         }
         return false;
     }

@@ -36,4 +36,5 @@
     <string name="exampleMiddleFocusProfile">2.4x</string>
     <string name="focusTextRightExample">3x</string>
     <string name="eventMenuTitle">Event</string>
+    <string name="habits_eventraid">Event raid</string>
 </resources>
