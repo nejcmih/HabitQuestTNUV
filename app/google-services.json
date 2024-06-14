@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "697833176278",
+    "project_id": "habitquesttnuv",
+    "storage_bucket": "habitquesttnuv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:697833176278:android:fbfef3a96622bb2ae45d77",
+        "android_client_info": {
+          "package_name": "si.uni_lj.fe.tnuv.habitquesttnuv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe0GlrxXz-QMbqnKnrUlxkTpkG2V4eUcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
