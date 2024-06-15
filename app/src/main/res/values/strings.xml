@@ -16,8 +16,8 @@
     <string name="habits_focusmultipliercurrent">2.4x</string>
     <string name="habits_focusmultipliernext">3x</string>
     <string name="habits_focusmultipliervalue">+0.2x/day</string>
-    <string name="habits_add_new_good_habit">+ Add new good habit</string>
-    <string name="habits_add_new_bad_habit">+ Add new bad habit</string>
+    <string name="habits_add_new_good_habit">+ Add a new good habit</string>
+    <string name="habits_add_new_bad_habit">+ Add a new bad habit</string>
     <string name="habits_hp">HP</string>
     <string name="habits_hpcurrent">40</string>
     <string name="habits_hphigh">100</string>
