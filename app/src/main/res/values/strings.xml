@@ -38,4 +38,22 @@
     <string name="focusTextRightExample">3x</string>
     <string name="eventMenuTitle">Event</string>
     <string name="habits_eventraid">Event raid</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="health_points">Health points</string>
+    <string name="add_a_new_bad_habit">Add a new bad habit</string>
+    <string name="choose_from_existing">Choose from existing</string>
+    <string name="or">OR</string>
+    <string name="enter_your_own">Enter your own</string>
+    <string name="add_a_new_good_habit">Add a new good habit</string>
+    <string name="focus_multiplier">Focus multiplier</string>
+    <string name="x_day">x/day</string>
+    <string name="xp">XP</string>
+    <string name="per_day">/day</string>
+    <string name="add_habit">Add habit</string>
+    <string name="cancel">Cancel</string>
+    <string name="hp_day">HP/day</string>
+    <string name="choose_type">Choose type</string>
+    <string name="add_a_new_daily_task">Add a new daily task</string>
+    <string name="add_task">Add task</string>
 </resources>
