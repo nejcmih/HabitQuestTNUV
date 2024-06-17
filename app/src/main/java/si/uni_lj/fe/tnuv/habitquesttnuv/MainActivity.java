@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import android.view.View;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -103,5 +105,20 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
             return true;
         }
         return false;
+    }
+
+    public void startAddGoodHabit(View v) {
+        Intent intent = new Intent(MainActivity.this, AddGoodHabitActivity.class);
+        startActivity(intent);
+    }
+
+    public void startAddBadHabit(View v) {
+        Intent intent = new Intent(MainActivity.this, AddBadHabitActivity.class);
+        startActivity(intent);
+    }
+
+    public void startAddDailyTask(View v) {
+        Intent intent = new Intent(MainActivity.this, AddDailyTaskActivity.class);
+        startActivity(intent);
     }
 }

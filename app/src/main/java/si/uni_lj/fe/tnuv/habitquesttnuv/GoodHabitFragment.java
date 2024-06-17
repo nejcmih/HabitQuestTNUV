@@ -1,5 +1,6 @@
 package si.uni_lj.fe.tnuv.habitquesttnuv;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;

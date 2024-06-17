@@ -1,6 +1,7 @@
 package si.uni_lj.fe.tnuv.habitquesttnuv;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +21,9 @@ public class AddDailyTaskActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void finishAddDailyTask(View v) {
+        AddDailyTaskActivity.this.finish();
     }
 }
