@@ -2,29 +2,21 @@ package si.uni_lj.fe.tnuv.habitquesttnuv;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import android.view.View;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.View;
+import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
 
@@ -47,11 +39,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.menu_good);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("habit")
@@ -59,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            Log.d(TAG, document.getId() + " => " + document.getData());
+                            Log.d(TAG, document.getData().toString());
                         }
                     } else {
                         Log.w(TAG, "Error getting documents.", task.getException());
