@@ -56,4 +56,51 @@
     <string name="choose_type">Choose type</string>
     <string name="add_a_new_daily_task">Add a new daily task</string>
     <string name="add_task">Add task</string>
+
+
+
+    <string-array name="titles">
+        <item>Peace Promoter</item>
+        <item>Health Advocate</item>
+        <item>Education Champion</item>
+        <item>Cultural Connector</item>
+        <item>Human Rights Defender</item>
+        <item>World Heritage Hero</item>
+        <item>Food Security Supporter</item>
+        <item>Mental Health Ally</item>
+        <item>Indigenous Advocate</item>
+        <item>Women\'s Rights Champion</item>
+        <item>Hunger Fighter</item>
+        <item>Volunteer Leader</item>
+        <item>Friendship Builder</item>
+        <item>Science Enthusiast</item>
+        <item>Sports Enthusiast</item>
+        <item>Anti-Tobacco Advocate</item>
+        <item>Humanitarian Hero</item>
+        <item>Happiness Ambassador</item>
+
+
+    </string-array>
+
+    <string-array name="titlesDesc">
+        <item>(earned by organizing a peace rally on International Day of Peace)</item>
+        <item>(earned by hosting a health fair on World Health Day)</item>
+        <item>(earned by conducting a literacy drive on International Literacy Day)</item>
+        <item>(earned by organizing a cultural exchange event on World Cultural Diversity Day)</item>
+        <item>(earned by raising awareness on Human Rights Day)</item>
+        <item>(earned by visiting 10 UNESCO World Heritage Sites on World Heritage Day)</item>
+        <item>(earned by volunteering at a food bank on World Food Day)</item>
+        <item>(earned by organizing a mental health awareness seminar on World Mental Health Day)</item>
+        <item>(earned by promoting indigenous cultures on International Day of the World\'s Indigenous Peoples)</item>
+        <item>(earned by leading a campaign for gender equality on International Women\'s Day)</item>
+        <item>(earned by participating in a meal packaging event on World Hunger Day)</item>
+        <item>(earned by organizing a volunteer event on International Volunteer Day)</item>
+        <item>(earned by fostering international friendships on International Friendship Day)</item>
+        <item>(earned by promoting science education on World Science Day for Peace and Development)</item>
+        <item>(earned by hosting a sports event on International Day of Sport for Development and Peace)</item>
+        <item>(earned by leading an anti-smoking campaign on World No Tobacco Day)</item>
+        <item>(earned by providing aid during a crisis on World Humanitarian Day)</item>
+        <item>(earned by spreading joy on International Day of Happiness)</item>
+
+    </string-array>
 </resources>
