@@ -36,6 +36,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import si.uni_lj.fe.tnuv.habitquesttnuv.Profile.Obleke.UpperClothe;
 
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     ProfileFragment profileFragment = new ProfileFragment();
 
     private UserHabitDatabase habitsDb;
+    private ServerHabitDatabase serverHabitsDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -75,6 +77,37 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.menu_good);
+
+        // Naloži podatke s Firebasa
+        serverHabitsDb = ServerHabitDatabase.getInstance(this);
+        new DeleteServerTasks().execute();
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("habit")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            //document.get("title").toString();
+                            ServerHabit serverHabit = new ServerHabit();
+                            serverHabit.setTitle(document.get("title").toString());
+                            serverHabit.setDescription(document.get("description").toString());
+                            serverHabit.setType(document.get("type").toString());
+                            serverHabit.setXp(Integer.parseInt(document.get("xp").toString()));
+
+                            if (document.get("focus") != null) {
+                                serverHabit.setFocus(Double.parseDouble(document.get("focus").toString()));
+                            }
+                            if (document.get("hp") != null) {
+                                serverHabit.setHp(Double.parseDouble(document.get("hp").toString()));
+                            }
+
+                            new InsertServerTask().execute(serverHabit);
+                        }
+                    } else {
+                        Log.w(TAG, "Error getting documents.", task.getException());
+                    }
+                });
     }
 
     @Override
@@ -83,39 +116,20 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         habitsDb = UserHabitDatabase.getInstance(this);
         UserHabitDao userHabitDao = habitsDb.userHabitDao();
-
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("habit")
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        for (QueryDocumentSnapshot document : task.getResult()) {
-                            //Log.d(TAG, document.getData().toString());
-                        }
-                    } else {
-                        Log.w(TAG, "Error getting documents.", task.getException());
-                    }
-                });
-
-        /*
-        UserHabit userHabit = new UserHabit();
-        userHabit.setTitle("Testni Naslov");
-        userHabit.setDescription("heyheyhey");
-        userHabit.setType("good");
-        userHabit.setFocus(1.4);
-        userHabit.setXp(20);
-
-        new InsertUserHabitTask().execute(userHabit);
-        */
-
-        //new GetTitleByIdTask().execute(1);
-
     }
 
-    private class InsertUserHabitTask extends AsyncTask<UserHabit, Void, Void> {
+    private class DeleteServerTasks extends AsyncTask<Void, Void, Void> {
         @Override
-        protected Void doInBackground(UserHabit... userHabits) {
-            habitsDb.userHabitDao().insert(userHabits[0]);
+        protected Void doInBackground(Void... voids) {
+            serverHabitsDb.serverHabitDao().deleteAllHabits();
+            return null;
+        }
+    }
+
+    private class InsertServerTask extends AsyncTask<ServerHabit, Void, Void> {
+        @Override
+        protected Void doInBackground(ServerHabit... serverHabits) {
+            serverHabitsDb.serverHabitDao().insert(serverHabits[0]);
             return null;
         }
     }
