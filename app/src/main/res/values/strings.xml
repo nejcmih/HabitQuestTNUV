@@ -57,6 +57,12 @@
     <string name="add_a_new_daily_task">Add a new daily task</string>
     <string name="add_task">Add task</string>
 
+    <string-array name="dailytypes">
+        <item>Warmup</item>
+        <item>Planned</item>
+        <item>Cooldown</item>
+    </string-array>
+
 
     <string-array name="titles">
         <item>Peace Promoter</item>
