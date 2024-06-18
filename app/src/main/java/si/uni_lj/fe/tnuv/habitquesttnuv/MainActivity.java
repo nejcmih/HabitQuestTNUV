@@ -2,44 +2,28 @@ package si.uni_lj.fe.tnuv.habitquesttnuv;
 
 import static android.content.ContentValues.TAG;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.auth.User;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.List;
-
-import java.util.ArrayList;
 import java.util.Objects;
+
 
 import si.uni_lj.fe.tnuv.habitquesttnuv.Profile.Obleke.UpperClothe;
 
+/** @noinspection deprecation*/
 public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
 
 //    ArrayList<UpperClothe> upperBodyClothes = new ArrayList<>();
@@ -58,9 +42,9 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     EventRaidFragment eventRaidFragment = new EventRaidFragment();
     ProfileFragment profileFragment = new ProfileFragment();
 
-    private UserHabitDatabase habitsDb;
     private ServerHabitDatabase serverHabitsDb;
 
+    /** @noinspection deprecation*/
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -90,16 +74,16 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             //document.get("title").toString();
                             ServerHabit serverHabit = new ServerHabit();
-                            serverHabit.setTitle(document.get("title").toString());
-                            serverHabit.setDescription(document.get("description").toString());
-                            serverHabit.setType(document.get("type").toString());
-                            serverHabit.setXp(Integer.parseInt(document.get("xp").toString()));
+                            serverHabit.setTitle(Objects.requireNonNull(document.get("title")).toString());
+                            serverHabit.setDescription(Objects.requireNonNull(document.get("description")).toString());
+                            serverHabit.setType(Objects.requireNonNull(document.get("type")).toString());
+                            serverHabit.setXp(Integer.parseInt(Objects.requireNonNull(document.get("xp")).toString()));
 
                             if (document.get("focus") != null) {
-                                serverHabit.setFocus(Double.parseDouble(document.get("focus").toString()));
+                                serverHabit.setFocus(Double.parseDouble(Objects.requireNonNull(document.get("focus")).toString()));
                             }
                             if (document.get("hp") != null) {
-                                serverHabit.setHp(Double.parseDouble(document.get("hp").toString()));
+                                serverHabit.setHp(Double.parseDouble(Objects.requireNonNull(document.get("hp")).toString()));
                             }
 
                             new InsertServerTask().execute(serverHabit);
@@ -110,14 +94,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                 });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        habitsDb = UserHabitDatabase.getInstance(this);
-        UserHabitDao userHabitDao = habitsDb.userHabitDao();
-    }
-
+    /** @noinspection deprecation*/
     private class DeleteServerTasks extends AsyncTask<Void, Void, Void> {
         @Override
         protected Void doInBackground(Void... voids) {
@@ -126,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         }
     }
 
+    /** @noinspection deprecation*/
     private class InsertServerTask extends AsyncTask<ServerHabit, Void, Void> {
         @Override
         protected Void doInBackground(ServerHabit... serverHabits) {
@@ -133,31 +111,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
             return null;
         }
     }
-
-    private class GetAllUserHabitsTask extends AsyncTask<Void, Void, List<UserHabit>> {
-        @Override
-        protected List<UserHabit> doInBackground(Void... voids) {
-            return habitsDb.userHabitDao().getAll();
-        }
-
-        @Override
-        protected void onPostExecute(List<UserHabit> userHabits) {
-            super.onPostExecute(userHabits);
-        }
-    }
-
-    private class GetTitleByIdTask extends AsyncTask<Integer, Void, String> {
-        @Override
-        protected String doInBackground(Integer... ids) {
-            return habitsDb.userHabitDao().getTitleById(ids[0]);
-        }
-
-        @Override
-        protected void onPostExecute(String title) {
-            super.onPostExecute(title);
-        }
-    }
-
 
 //    private void setUpUpperClothe(){
 //        String[] upperClotheNames = getResources().getStringArray(R.array.upperClotheName);
