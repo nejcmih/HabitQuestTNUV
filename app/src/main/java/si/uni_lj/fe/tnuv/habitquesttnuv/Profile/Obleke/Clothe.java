@@ -2,6 +2,7 @@ package si.uni_lj.fe.tnuv.habitquesttnuv.Profile.Obleke;
 //to je parent class vseh oblacil
 //Vsaki kos oblacila ima svoj tip, id, pictureId, ime in boolean ce je unlocked
 public class Clothe {
+    static int clotheCount = 0;
     private int id;
     private int pictureId; //id slikice
     private String name;
@@ -9,6 +10,15 @@ public class Clothe {
 
     public Clothe(int id, int pictureId, String name) {
         this.id = id;
+        this.id = 1000+clotheCount;
+        this.pictureId = pictureId;
+        this.name = name;
+        this.unlocked = false;
+    }
+
+    public Clothe(int pictureId, String name) {
+        clotheCount = clotheCount+1;
+        this.id = 1000+clotheCount;
         this.pictureId = pictureId;
         this.name = name;
         this.unlocked = false;

@@ -19,6 +19,9 @@
             android:name=".AddBadHabitActivity"
             android:exported="false" />
         <activity
+            android:name=".CustomClothesActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddGoodHabitActivity"
             android:exported="false" />
         <activity

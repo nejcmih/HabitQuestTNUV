@@ -58,7 +58,6 @@
     <string name="add_task">Add task</string>
 
 
-
     <string-array name="titles">
         <item>Peace Promoter</item>
         <item>Health Advocate</item>
@@ -103,4 +102,15 @@
         <item>(earned by spreading joy on International Day of Happiness)</item>
 
     </string-array>
+
+    <string-array name="upperClotheName">
+        <item>Yeet1</item>
+        <item>Yeet2</item>
+        <item>Yeet3</item>
+        <item>Yeet4</item>
+        <item>Yeet5</item>
+
+
+    </string-array>
+
 </resources>
