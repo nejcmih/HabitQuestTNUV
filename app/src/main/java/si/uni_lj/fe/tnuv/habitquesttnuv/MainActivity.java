@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         new InsertUserHabitTask().execute(userHabit);
         */
 
-        new GetTitleByIdTask().execute(0);
+        //new GetTitleByIdTask().execute(1);
 
     }
 

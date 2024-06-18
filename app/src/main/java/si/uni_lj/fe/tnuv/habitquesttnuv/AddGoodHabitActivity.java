@@ -3,6 +3,7 @@ package si.uni_lj.fe.tnuv.habitquesttnuv;
 import static android.content.ContentValues.TAG;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,11 +15,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-
 public class AddGoodHabitActivity extends AppCompatActivity {
+
+    private UserHabitDatabase habitsDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +31,12 @@ public class AddGoodHabitActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        habitsDb = UserHabitDatabase.getInstance(this);
+    }
+
     public void saveGoodHabit(View v) {
         EditText vnosName = findViewById(R.id.editGoodName);
         EditText vnosDescription = findViewById(R.id.editGoodDesc);
@@ -40,57 +45,28 @@ public class AddGoodHabitActivity extends AppCompatActivity {
 
         String name = vnosName.getText().toString();
         String description = vnosDescription.getText().toString();
-        float focus = Float.parseFloat(vnosFocus.getText().toString());
+        Double focus = Double.parseDouble(vnosFocus.getText().toString());
         int xp = Integer.parseInt(vnosXp.getText().toString());
 
-        String sestavljen = "\ntitle: " + name + "\ndescription: " + description + "\ntype: good" + "\nfocus: " + focus + "\nxp: " + xp + "\n";
+        UserHabit userHabit = new UserHabit();
+        userHabit.setTitle(name);
+        userHabit.setDescription(description);
+        userHabit.setType("good");
+        userHabit.setFocus(focus);
+        userHabit.setXp(xp);
 
-        //Log.d(TAG, sestavljen);
-        //vpisiVDatoteko(sestavljen);
+        new InsertUserHabitTask().execute(userHabit);
+
         finishAddGoodHabit(v);
     }
-    private void vpisiVDatoteko(String vsebina){
 
-        try {
-            //ustvarimo izhodni tok
-            FileOutputStream os = openFileOutput("habits.txt", Context.MODE_PRIVATE | Context.MODE_APPEND);
-            //zapisemo posredovano vsebino v datoteko
-            os.write(vsebina.getBytes());
-            //sprostimo izhodni tok
-            os.close();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
+    private class InsertUserHabitTask extends AsyncTask<UserHabit, Void, Void> {
+        @Override
+        protected Void doInBackground(UserHabit... userHabits) {
+            habitsDb.userHabitDao().insert(userHabits[0]);
+            return null;
         }
     }
-
-    private String beriIzDatoteke(){
-
-        // ustvarimo vhodni podatkovni tok
-        FileInputStream inputStream;
-
-        //ugotovimo, koliko je velika datoteka
-        File file = new File(getFilesDir(), "habits.txt");
-        int length = (int) file.length();
-
-        //pripravimo spremenljivko, v katero se bodo prebrali podatki
-        byte[] bytes = new byte[length];
-
-        //preberemo podatke
-        try {
-            inputStream = openFileInput("habits.txt");
-            inputStream.read(bytes);
-            inputStream.close();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        //podatke pretvorimo iz polja bajtov v znakovni niz
-        String vsebina = new String(bytes);
-
-        return vsebina;
-    }
-
 
     public void finishAddGoodHabit(View v) {
         AddGoodHabitActivity.this.finish();

@@ -14,7 +14,7 @@ public abstract class UserHabitDatabase extends RoomDatabase {
     public static synchronized UserHabitDatabase getInstance(Context context) {
         if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
-                            UserHabitDatabase.class, "app_database")
+                            UserHabitDatabase.class, "habitquest_db")
                     .fallbackToDestructiveMigration()  // Handle migration if necessary
                     .build();
         }
