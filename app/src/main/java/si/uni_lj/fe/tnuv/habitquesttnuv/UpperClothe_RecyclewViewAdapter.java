@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,6 +35,7 @@ public class UpperClothe_RecyclewViewAdapter extends RecyclerView.Adapter<UpperC
     @Override
     public void onBindViewHolder(@NonNull UpperClothe_RecyclewViewAdapter.MyViewHolder holder, int position) {
         holder.imageView.setImageResource(upperClotheModels.get(position).getPictureId());
+        holder.textView.setText(upperClotheModels.get(position).getName());
 
     }
 
@@ -44,11 +46,13 @@ public class UpperClothe_RecyclewViewAdapter extends RecyclerView.Adapter<UpperC
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
+        TextView textView;
 
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
+            textView = itemView.findViewById(R.id.textView37);
         }
     }
 }

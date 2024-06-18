@@ -61,4 +61,5 @@ public class fragment_upperBodyRecycle extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_upper_body_recycle, container, false);
     }
+    
 }

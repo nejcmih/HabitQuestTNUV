@@ -25,6 +25,9 @@
             android:name=".AddGoodHabitActivity"
             android:exported="false" />
         <activity
+            android:name=".DejanskiCustomiseActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
