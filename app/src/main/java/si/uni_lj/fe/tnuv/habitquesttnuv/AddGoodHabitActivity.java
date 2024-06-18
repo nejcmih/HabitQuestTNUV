@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AddGoodHabitActivity extends AppCompatActivity {
 
+    private ServerHabitDatabase serverHabitsDb;
     private UserHabitDatabase habitsDb;
 
     @Override
@@ -31,6 +32,7 @@ public class AddGoodHabitActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         habitsDb = UserHabitDatabase.getInstance(this);
+        serverHabitsDb = ServerHabitDatabase.getInstance(this);
     }
 
     public void saveGoodHabit(View v) {

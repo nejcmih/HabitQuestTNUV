@@ -12,6 +12,12 @@ public interface UserHabitDao {
     @Query("SELECT * FROM userhabit")
     List<UserHabit> getAll();
 
+    @Query("SELECT * FROM userhabit WHERE id = :id")
+    UserHabit getHabitById(int id);
+
+    @Query("SELECT * FROM userhabit WHERE type = :type")
+    List<UserHabit> getByType(String type);
+
     @Insert
     void insert(UserHabit userhabit);
 

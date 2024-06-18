@@ -18,6 +18,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -61,6 +64,11 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.menu_good);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
         // Naloži podatke s Firebasa
         serverHabitsDb = ServerHabitDatabase.getInstance(this);
@@ -92,6 +100,28 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                         Log.w(TAG, "Error getting documents.", task.getException());
                     }
                 });
+
+        new SelectHabitDescription().execute();
+    }
+
+    private class SelectHabitDescription extends AsyncTask<Void, Void, String> {
+        @Override
+        protected String doInBackground(Void... voids) {
+            String habitDesc = serverHabitsDb.serverHabitDao().getDescById(20);
+            if (habitDesc == null) {
+                Log.d(TAG, "desc je null");
+            }
+            else {
+                Log.d(TAG, habitDesc);
+            }
+            return habitDesc;
+        }
+        @Override
+        protected void onPostExecute(String habitDesc) {
+            super.onPostExecute(habitDesc);
+
+            //Collections.copy(listGoodHabits, userHabits);
+        }
     }
 
     /** @noinspection deprecation*/

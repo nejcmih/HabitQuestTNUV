@@ -1,13 +1,27 @@
 package si.uni_lj.fe.tnuv.habitquesttnuv;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.Toast;
+
+import com.google.firebase.firestore.auth.User;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Collections;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,6 +61,10 @@ public class GoodHabitFragment extends Fragment {
         return fragment;
     }
 
+    private UserHabitDatabase habitsDb;
+    private ListView lv;
+    private List<UserHabit> listGoodHabits;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,12 +72,74 @@ public class GoodHabitFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        habitsDb = UserHabitDatabase.getInstance(getContext());
+
+        //new SelectUserGoodHabits().execute();
+        /*
+        new Thread() {
+            @Override
+            public void run() {
+                getActivity().runOnUiThread(() -> showHabits());
+            }
+        }.start();
+        */
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_good_habit, container, false);
+        View view = inflater.inflate(R.layout.fragment_good_habit, container, false);
+        lv = view.findViewById(R.id.list);
+
+        return view;
+    }
+
+    private void showHabits() {
+        ArrayList<HashMap<String, String>> seznam = convertToArrayList(listGoodHabits);
+        SimpleAdapter adapter = new SimpleAdapter(
+                getContext(),
+                seznam,
+                R.layout.habit_item,
+                new String[]{"title", "description", "focus"},
+                new int[]{R.id.habitLabelTitle, R.id.habitLabelDesc, R.id.habitLabelAttr}
+        );
+        lv.setAdapter(adapter);
+    }
+
+    /** @noinspection deprecation*/
+    private class SelectUserGoodHabits extends AsyncTask<Void, Void, List<UserHabit>> {
+        @Override
+        protected List<UserHabit> doInBackground(Void... voids) {
+            List<UserHabit> userHabits = habitsDb.userHabitDao().getAll();
+            Log.d(TAG, String.valueOf(userHabits.size()));
+            return userHabits;
+        }
+        @Override
+        protected void onPostExecute(List<UserHabit> userHabits) {
+            super.onPostExecute(userHabits);
+
+            //Collections.copy(listGoodHabits, userHabits);
+        }
+    }
+
+    private ArrayList<HashMap<String, String>> koncniSeznam = new ArrayList<>();
+    public ArrayList<HashMap<String, String>> convertToArrayList(List<UserHabit> list) {
+        for (int i = 0; i < list.size(); i++) {
+            UserHabit habit = list.get(i);
+            HashMap<String, String> temp = new HashMap<>();
+            temp.put("title", habit.getTitle());
+            temp.put("desc", habit.getDescription());
+            temp.put("focus", habit.getFocus().toString());
+
+            koncniSeznam.add(temp);
+        }
+        return koncniSeznam;
     }
 }

@@ -5,12 +5,16 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Dao
 public interface ServerHabitDao {
     @Query("SELECT * FROM serverhabit")
     List<ServerHabit> getAll();
+
+    @Query("SELECT description FROM serverhabit WHERE id = :id")
+    String getDescById(int id);
 
     @Insert
     void insert(ServerHabit serverhabit);
