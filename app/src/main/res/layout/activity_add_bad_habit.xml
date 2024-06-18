@@ -104,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/editBadName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -132,10 +132,10 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintTop_toBottomOf="@+id/editBadName" />
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/editBadDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -163,10 +163,10 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintTop_toBottomOf="@+id/editBadDesc" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal2"
+        android:id="@+id/editBadHp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -190,11 +190,11 @@
         android:text="@string/hp_day"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberDecimal2"
+        app:layout_constraintBottom_toBottomOf="@+id/editBadHp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumberDecimal2"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumberDecimal2" />
+        app:layout_constraintStart_toEndOf="@+id/editBadHp"
+        app:layout_constraintTop_toTopOf="@+id/editBadHp" />
 
     <TextView
         android:id="@+id/textView28"
@@ -207,10 +207,10 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal2" />
+        app:layout_constraintTop_toBottomOf="@+id/editBadHp" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/editBadXp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -234,20 +234,21 @@
         android:text="@string/per_day"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber2"
+        app:layout_constraintBottom_toBottomOf="@+id/editBadXp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber2"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumber2" />
+        app:layout_constraintStart_toEndOf="@+id/editBadXp"
+        app:layout_constraintTop_toTopOf="@+id/editBadXp" />
 
     <Button
-        android:id="@+id/habitAdd4"
+        android:id="@+id/buttonAddBad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/yellow"
         android:fontFamily="@font/kumbh_sans_bold"
+        android:onClick="saveBadHabit"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:shadowColor="@color/button_gray"
@@ -263,7 +264,7 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/habitAdd5"
+        android:id="@+id/buttonCancelBad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"

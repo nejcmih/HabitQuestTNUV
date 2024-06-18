@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         @Override
         protected void onPostExecute(List<UserHabit> userHabits) {
             super.onPostExecute(userHabits);
-            Log.d(TAG, userHabits.toString());
         }
     }
 
@@ -142,7 +141,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         @Override
         protected void onPostExecute(String title) {
             super.onPostExecute(title);
-            Log.d(TAG, title);
         }
     }
 

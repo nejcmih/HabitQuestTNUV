@@ -1,11 +1,7 @@
 package si.uni_lj.fe.tnuv.habitquesttnuv;
 
-import static android.content.ContentValues.TAG;
-
-import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
