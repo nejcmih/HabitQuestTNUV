@@ -104,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editGoodName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -132,10 +132,10 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/editGoodName" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editGoodDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -163,10 +163,10 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editGoodDesc" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/editGoodFocus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -190,11 +190,11 @@
         android:text="@string/x_day"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/editGoodFocus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumberDecimal"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumberDecimal" />
+        app:layout_constraintStart_toEndOf="@+id/editGoodFocus"
+        app:layout_constraintTop_toTopOf="@+id/editGoodFocus" />
 
     <TextView
         android:id="@+id/textView19"
@@ -207,10 +207,10 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+        app:layout_constraintTop_toBottomOf="@+id/editGoodFocus" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editGoodXP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -234,14 +234,14 @@
         android:text="@string/per_day"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintBottom_toBottomOf="@+id/editGoodXP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumber" />
+        app:layout_constraintStart_toEndOf="@+id/editGoodXP"
+        app:layout_constraintTop_toTopOf="@+id/editGoodXP" />
 
     <Button
-        android:id="@+id/habitAdd3"
+        android:id="@+id/buttonCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -263,13 +263,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/habitAdd2"
+        android:id="@+id/buttonAddGood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/yellow"
         android:fontFamily="@font/kumbh_sans_bold"
+        android:onClick="saveGoodHabit"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:shadowColor="@color/button_gray"

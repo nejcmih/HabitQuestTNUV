@@ -2,15 +2,20 @@ package si.uni_lj.fe.tnuv.habitquesttnuv;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,6 +23,17 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.auth.User;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.List;
 
 import java.util.ArrayList;
 
@@ -41,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     EventRaidFragment eventRaidFragment = new EventRaidFragment();
     ProfileFragment profileFragment = new ProfileFragment();
 
+    private UserHabitDatabase habitsDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -58,6 +75,14 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.menu_good);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        habitsDb = UserHabitDatabase.getInstance(this);
+        UserHabitDao userHabitDao = habitsDb.userHabitDao();
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("habit")
@@ -65,13 +90,62 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            Log.d(TAG, document.getData().toString());
+                            //Log.d(TAG, document.getData().toString());
                         }
                     } else {
                         Log.w(TAG, "Error getting documents.", task.getException());
                     }
                 });
+
+        /*
+        UserHabit userHabit = new UserHabit();
+        userHabit.setTitle("Testni Naslov");
+        userHabit.setDescription("heyheyhey");
+        userHabit.setType("good");
+        userHabit.setFocus(1.4);
+        userHabit.setXp(20);
+
+        new InsertUserHabitTask().execute(userHabit);
+        */
+
+        new GetTitleByIdTask().execute(0);
+
     }
+
+    private class InsertUserHabitTask extends AsyncTask<UserHabit, Void, Void> {
+        @Override
+        protected Void doInBackground(UserHabit... userHabits) {
+            habitsDb.userHabitDao().insert(userHabits[0]);
+            return null;
+        }
+    }
+
+    private class GetAllUserHabitsTask extends AsyncTask<Void, Void, List<UserHabit>> {
+        @Override
+        protected List<UserHabit> doInBackground(Void... voids) {
+            return habitsDb.userHabitDao().getAll();
+        }
+
+        @Override
+        protected void onPostExecute(List<UserHabit> userHabits) {
+            super.onPostExecute(userHabits);
+            Log.d(TAG, userHabits.toString());
+        }
+    }
+
+    private class GetTitleByIdTask extends AsyncTask<Integer, Void, String> {
+        @Override
+        protected String doInBackground(Integer... ids) {
+            return habitsDb.userHabitDao().getTitleById(ids[0]);
+        }
+
+        @Override
+        protected void onPostExecute(String title) {
+            super.onPostExecute(title);
+            Log.d(TAG, title);
+        }
+    }
+
 
 //    private void setUpUpperClothe(){
 //        String[] upperClotheNames = getResources().getStringArray(R.array.upperClotheName);
