@@ -2,6 +2,7 @@ package si.uni_lj.fe.tnuv.habitquesttnuv;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     ProfileFragment profileFragment = new ProfileFragment();
 
     private ServerHabitDatabase serverHabitsDb;
+    private UserHabitDatabase userHabitsDb;
+
 
     /** @noinspection deprecation*/
     @Override
@@ -66,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.menu_good);
+
+        serverHabitsDb = ServerHabitDatabase.getInstance(this);
+        userHabitsDb = UserHabitDatabase.getInstance(this);
     }
 
     @Override
@@ -73,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         super.onStart();
 
         // Naloži podatke s Firebasa
-        serverHabitsDb = ServerHabitDatabase.getInstance(this);
         new DeleteServerTasks().execute();
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -103,8 +108,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                     }
                 });
 
-        new SelectHabitDescription().execute();
-
 
         //inicializirajUporabnika
         //TODO: Naj iz sql baze ali pa iz jsona prebere podatke za inicializacijo igralca
@@ -123,26 +126,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
 
 
-    }
-
-    private class SelectHabitDescription extends AsyncTask<Void, Void, String> {
-        @Override
-        protected String doInBackground(Void... voids) {
-            String habitDesc = serverHabitsDb.serverHabitDao().getDescById(20);
-            if (habitDesc == null) {
-                Log.d(TAG, "desc je null");
-            }
-            else {
-                Log.d(TAG, habitDesc);
-            }
-            return habitDesc;
-        }
-        @Override
-        protected void onPostExecute(String habitDesc) {
-            super.onPostExecute(habitDesc);
-
-            //Collections.copy(listGoodHabits, userHabits);
-        }
     }
 
     /** @noinspection deprecation*/

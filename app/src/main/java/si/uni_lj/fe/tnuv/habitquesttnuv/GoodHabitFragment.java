@@ -2,6 +2,8 @@ package si.uni_lj.fe.tnuv.habitquesttnuv;
 
 import static android.content.ContentValues.TAG;
 
+import static si.uni_lj.fe.tnuv.habitquesttnuv.MainActivity.*;
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -61,9 +63,10 @@ public class GoodHabitFragment extends Fragment {
         return fragment;
     }
 
-    private UserHabitDatabase habitsDb;
+    //private UserHabitDatabase habitsDb;
     private ListView lv;
     private List<UserHabit> listGoodHabits;
+    private UserHabitDatabase habitsDb;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,7 +78,8 @@ public class GoodHabitFragment extends Fragment {
 
         habitsDb = UserHabitDatabase.getInstance(getContext());
 
-        //new SelectUserGoodHabits().execute();
+        //new SelectUserGoodHabits().execute("good");
+
         /*
         new Thread() {
             @Override
@@ -114,10 +118,10 @@ public class GoodHabitFragment extends Fragment {
     }
 
     /** @noinspection deprecation*/
-    private class SelectUserGoodHabits extends AsyncTask<Void, Void, List<UserHabit>> {
+    private class SelectUserGoodHabits extends AsyncTask<String, Void, List<UserHabit>> {
         @Override
-        protected List<UserHabit> doInBackground(Void... voids) {
-            List<UserHabit> userHabits = habitsDb.userHabitDao().getAll();
+        protected List<UserHabit> doInBackground(String... types) {
+            List<UserHabit> userHabits = habitsDb.userHabitDao().getByType(types[0]);
             Log.d(TAG, String.valueOf(userHabits.size()));
             return userHabits;
         }
@@ -126,6 +130,19 @@ public class GoodHabitFragment extends Fragment {
             super.onPostExecute(userHabits);
 
             //Collections.copy(listGoodHabits, userHabits);
+        }
+    }
+
+    private class SelectUserGoodHabit extends AsyncTask<Integer, Void, UserHabit> {
+        @Override
+        protected UserHabit doInBackground(Integer... ids) {
+            UserHabit userHabit = habitsDb.userHabitDao().getHabitById(ids[0]);
+            Log.d(TAG, userHabit.toString());
+            return userHabit;
+        }
+        @Override
+        protected void onPostExecute(UserHabit userHabit) {
+            super.onPostExecute(userHabit);
         }
     }
 
