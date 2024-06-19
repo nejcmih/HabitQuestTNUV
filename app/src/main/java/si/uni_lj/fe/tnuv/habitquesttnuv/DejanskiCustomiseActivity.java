@@ -1,5 +1,6 @@
 package si.uni_lj.fe.tnuv.habitquesttnuv;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
@@ -127,7 +128,7 @@ public class DejanskiCustomiseActivity extends AppCompatActivity {
             this.fragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainerView2, fragment_hair_clothe_recycle.class, null)
                     .setReorderingAllowed(true)
-                    .addToBackStack("name")
+//                    .addToBackStack("name")
                     .commit();
             this.btnEna.setBackgroundColor(getResources().getColor(R.color.white));
             this.btnTri.setBackgroundColor(getResources().getColor(R.color.white));
@@ -160,7 +161,7 @@ public class DejanskiCustomiseActivity extends AppCompatActivity {
             this.fragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainerView2, fragment_skin_clothe_recycle.class, null)
                     .setReorderingAllowed(true)
-                    .addToBackStack("name")
+//                    .addToBackStack("name")
                     .commit();
             this.btnDva.setBackgroundColor(getResources().getColor(R.color.white));
             this.btnEna.setBackgroundColor(getResources().getColor(R.color.white));
@@ -193,7 +194,7 @@ public class DejanskiCustomiseActivity extends AppCompatActivity {
             this.fragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainerView2, fragment_upperBodyRecycle.class, null)
                     .setReorderingAllowed(true)
-                    .addToBackStack("name")
+//                    .addToBackStack("name")
                     .commit();
             this.btnEna.setBackgroundColor(getResources().getColor(R.color.white));
             this.btnTri.setBackgroundColor(getResources().getColor(R.color.white));
@@ -225,7 +226,7 @@ public class DejanskiCustomiseActivity extends AppCompatActivity {
             this.fragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainerView2, fragment_lower_clothe_recycle.class, null)
                     .setReorderingAllowed(true)
-                    .addToBackStack("name")
+//                    .addToBackStack("name")
                     .commit();
             this.btnEna.setBackgroundColor(getResources().getColor(R.color.white));
             this.btnTri.setBackgroundColor(getResources().getColor(R.color.white));
@@ -257,7 +258,7 @@ public class DejanskiCustomiseActivity extends AppCompatActivity {
             this.fragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainerView2, fragment_weapon_clothe_recycle.class, null)
                     .setReorderingAllowed(true)
-                    .addToBackStack("name")
+//                    .addToBackStack("name")
                     .commit();
             this.btnEna.setBackgroundColor(getResources().getColor(R.color.white));
             this.btnTri.setBackgroundColor(getResources().getColor(R.color.white));
@@ -265,5 +266,12 @@ public class DejanskiCustomiseActivity extends AppCompatActivity {
             this.btnPet.setBackgroundColor(getResources().getColor(R.color.white));
             this.btnDva.setBackgroundColor(getResources().getColor(R.color.white));
         }
+
+
+    }
+    public void start_pojdiVCustomClothes(View v){
+        Intent intent = new Intent(this, CustomClothesActivity.class);
+        startActivity(intent);
+
     }
 }

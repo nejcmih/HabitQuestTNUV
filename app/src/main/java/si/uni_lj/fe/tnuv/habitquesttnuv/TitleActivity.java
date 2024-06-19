@@ -1,5 +1,6 @@
 package si.uni_lj.fe.tnuv.habitquesttnuv;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,5 +57,9 @@ public class TitleActivity extends AppCompatActivity {
         for(int i = 0; i<titleNames.length; i++){
             titlesArray.add(new Title(titleNames[i], titleDescs[i], false));
         }
+    }
+    public void start_pojdiVProfil(View v){
+        Intent intent = new Intent(this, CustomClothesActivity.class);
+        startActivity(intent);
     }
 }

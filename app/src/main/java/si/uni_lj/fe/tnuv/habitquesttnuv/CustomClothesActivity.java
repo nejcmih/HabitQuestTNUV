@@ -40,27 +40,16 @@ public class CustomClothesActivity extends AppCompatActivity {
                 v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
                 return insets;
             });
-//            RecyclerView recyclerView2 = findViewById(R.id.RecyclerUpper);
-//            setUpUpperClothe();
-//            UpperClothe_RecyclewViewAdapter adapter2 = new UpperClothe_RecyclewViewAdapter(this, upperBodyClothes);
-//            recyclerView2.setAdapter(adapter2);
-//            recyclerView2.setLayoutManager(new LinearLayoutManager(this));
 
 
         }
 
-
-//    private void setUpUpperClothe(){
-//        String[] upperClotheNames = getResources().getStringArray(R.array.upperClotheName);
-//
-//        for(int i = 0; i<upperClotheNames.length; i++){
-//            upperBodyClothes.add(new UpperClothe(upperBodyClothesImages[i], upperClotheNames[i]));
-//        }
-//    }
 
         public void finishCustomClothes(View v) {
             CustomClothesActivity.this.finish();
         }
+
+
 
     public void start_pojdiVCustomClothes(View v){
         Intent intent = new Intent(this, DejanskiCustomiseActivity.class);
@@ -72,5 +61,10 @@ public class CustomClothesActivity extends AppCompatActivity {
     }
     public void finishTitli(View v) {
         CustomClothesActivity.this.finish();
+    }
+    public void start_pojdiVProfil(View v){
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+
     }
 }
