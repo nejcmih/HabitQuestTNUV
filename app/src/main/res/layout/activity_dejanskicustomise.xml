@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/almostwhite">
 
 
     <!--TODO: for some reason mi na novo importanih ikon ni naslo-->
@@ -19,13 +20,13 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01999998">
+        app:layout_constraintVertical_bias="0.98">
 
         <ImageButton
             android:id="@+id/imageView17"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/yellow"
+            android:background="@color/white"
 
 
             android:scaleType="centerInside"
@@ -33,7 +34,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/face_icon" />
+            app:srcCompat="@drawable/face_icon"
+            android:clickable="true"
+            android:focusable="true"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -54,7 +57,8 @@
             android:id="@+id/imageView16"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/yellow"
+            android:background="@color/white"
+            android:padding="1dp"
 
 
             android:scaleType="centerInside"
@@ -84,18 +88,18 @@
 
         <ImageButton
             android:id="@+id/imageView3"
-
+android:padding="3dp"
 
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/yellow"
+            android:background="@color/white"
             android:scaleType="centerInside"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/hair_icon" />
+            app:srcCompat="@drawable/coloricon" />
 
     </androidx.cardview.widget.CardView>
 
@@ -115,11 +119,12 @@
 
         <ImageButton
             android:id="@+id/imageView18"
+            android:padding="3dp"
 
 
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/yellow"
+            android:background="@color/white"
             android:scaleType="centerInside"
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -147,8 +152,9 @@
 
 
             android:layout_width="50dp"
+            android:padding="3dp"
             android:layout_height="50dp"
-            android:background="@color/yellow"
+            android:background="@color/white"
             android:scaleType="centerInside"
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -176,8 +182,9 @@
             android:id="@+id/imageView4"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:padding="2dp"
 
-            android:background="@color/yellow"
+            android:background="@color/white"
             android:scaleType="centerInside"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -192,14 +199,14 @@
 
 
     <androidx.fragment.app.FragmentContainerView
+        android:layout_marginBottom="20dp"
         android:id="@+id/fragmentContainerView2"
         android:name="si.uni_lj.fe.tnuv.habitquesttnuv.fragment_upperBodyRecycle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cardView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--    <fragment-->
     <!--        android:layout_width="match_parent"-->

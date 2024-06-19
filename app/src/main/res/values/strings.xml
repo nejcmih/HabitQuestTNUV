@@ -110,13 +110,55 @@
     </string-array>
 
     <string-array name="upperClotheName">
-        <item>Yeet1</item>
-        <item>Yeet2</item>
-        <item>Yeet3</item>
-        <item>Yeet4</item>
-        <item>Yeet5</item>
+        <item>Jerkin of Saltshore</item>
+        <item>Garb of Riptide2</item>
+        <item>Cloak of Stormwatch</item>
+        <item>Vestment of Deepwave</item>
+        <item>Mantle of Driftwood</item>
 
 
+    </string-array>
+
+    <string-array name="faceName">
+        <item>Quirky</item>
+        <item>Angry</item>
+        <item>Bruh</item>
+        <item>Lovely</item>
+        <item>Horny</item>
+
+
+    </string-array>
+
+    <string-array name="lowerClotheName">
+        <item>Pants of the dragon</item>
+        <item>Kilt of swinging in the breeze</item>
+        <item>The Femboy</item>
+        <item>The Boyfem</item>
+        <item>Major pants general</item>
+    </string-array>
+
+    <string-array name="hairClotheName">
+        <item>The blondie</item>
+        <item>Karen Maker</item>
+        <item>Town Trouble</item>
+        <item>Surprise me Barber</item>
+        <item>The confusion</item>
+    </string-array>
+
+    <string-array name="skinClotheName">
+        <item>Uhmmm heh</item>
+        <item>It\'s kinda</item>
+        <item>Racist to just</item>
+        <item>Call a skin</item>
+        <item>Yellow :D</item>
+    </string-array>
+
+    <string-array name="weaponClotheName">
+        <item>The sword of Hyrule</item>
+        <item>Immolation magic</item>
+        <item>Bow of assasination</item>
+        <item>Death Grip</item>
+        <item>The purple violator</item>
     </string-array>
 
 </resources>

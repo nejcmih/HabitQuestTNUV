@@ -4,4 +4,7 @@ public class HairClothe extends Clothe{
     public HairClothe(int id, int pictureId, String name) {
         super(id, pictureId, name);
     }
+    public HairClothe(int pictureId, String name) {
+        super(pictureId, name);
+    }
 }

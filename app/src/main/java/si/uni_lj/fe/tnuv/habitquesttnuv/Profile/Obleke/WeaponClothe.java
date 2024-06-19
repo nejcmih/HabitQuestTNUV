@@ -4,4 +4,7 @@ public class WeaponClothe extends Clothe{
     public WeaponClothe(int id, int pictureId, String name) {
         super(id, pictureId, name);
     }
+    public WeaponClothe(int pictureId, String name) {
+        super(pictureId, name);
+    }
 }
