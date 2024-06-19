@@ -25,6 +25,7 @@ import java.util.Objects;
 
 
 import si.uni_lj.fe.tnuv.habitquesttnuv.Profile.Obleke.UpperClothe;
+import si.uni_lj.fe.tnuv.habitquesttnuv.Profile.Player;
 
 /** @noinspection deprecation*/
 public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
@@ -102,6 +103,25 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                 });
 
         new SelectHabitDescription().execute();
+
+
+        //inicializirajUporabnika
+        //TODO: Naj iz sql baze ali pa iz jsona prebere podatke za inicializacijo igralca
+        //Tukaj devam dummy data noter ta cas ko ni baze
+        //ker ni neke baze zadaj, ne morem unlockinga nastimat
+        Player igralec = new Player("Luka Koromac");
+        igralec.setStreak(6);
+        igralec.setLevel(2);
+        igralec.setXp(1120);
+        igralec.setXpToLevel(1200);
+        igralec.setCurrentFocus(2.4f);
+        igralec.setMaxFocus(3);
+        igralec.setChosenTitle("Peace Promoter");
+        int[] izbor = {0,0,0,0,0,0};
+        igralec.setIzbiraObleke(izbor);
+
+
+
     }
 
     private class SelectHabitDescription extends AsyncTask<Void, Void, String> {

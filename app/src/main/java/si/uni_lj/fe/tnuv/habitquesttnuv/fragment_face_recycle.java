@@ -8,21 +8,24 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import si.uni_lj.fe.tnuv.habitquesttnuv.Profile.Obleke.FaceClothe;
 import si.uni_lj.fe.tnuv.habitquesttnuv.Profile.Obleke.UpperClothe;
+import si.uni_lj.fe.tnuv.habitquesttnuv.Profile.Player;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link fragment_face_recycle#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_face_recycle extends Fragment {
+public class fragment_face_recycle extends Fragment implements RecyclerViewInterface{
 
     private RecyclerView recyclerView2;
     ArrayList<FaceClothe> faceClothes = new ArrayList<>();
@@ -97,8 +100,15 @@ public class fragment_face_recycle extends Fragment {
         recyclerView2 = view.findViewById(R.id.RecyclerFace);
         recyclerView2.setLayoutManager(new LinearLayoutManager(this.getContext()));
         //recyclerView2.setHasFixedSize(true);
-        FaceClothe_RecycleViewAdapter adapter3 = new FaceClothe_RecycleViewAdapter(getContext(), faceClothes);
+        FaceClothe_RecycleViewAdapter adapter3 = new FaceClothe_RecycleViewAdapter(getContext(), faceClothes, this);
         recyclerView2.setAdapter(adapter3);
         adapter3.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        //klikanje na specific item
+        System.out.println(faceClothes.get(position).getPictureId());
+        Toast.makeText(this.getContext(), faceClothes.get(position).getName(), Toast.LENGTH_SHORT).show();
     }
 }

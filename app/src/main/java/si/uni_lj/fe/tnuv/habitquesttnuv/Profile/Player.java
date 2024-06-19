@@ -11,8 +11,8 @@ public class Player {
     private int xpToLevel;
     private String chosenTitle;
     private TreeSet<String> titles;
-    private int currentFocus;
-    private int maxFocus;
+    private float currentFocus;
+    private float maxFocus;
     private int currentHealth;
     private int maxHealh;
     private int[] izbiraObleke; //0 = koza, 1 = obraz, 2 = lasje, 3 = zgornjaObleka, 4 = spodnjaObleka, 5 = orozje
@@ -90,15 +90,15 @@ public class Player {
         this.titles = titles;
     }
 
-    public int getCurrentFocus() {
+    public float getCurrentFocus() {
         return this.currentFocus;
     }
 
-    public void setCurrentFocus(int currentFocus) {
+    public void setCurrentFocus(float currentFocus) {
         this.currentFocus = currentFocus;
     }
 
-    public int getMaxFocus() {
+    public float getMaxFocus() {
         return this.maxFocus;
     }
 

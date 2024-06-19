@@ -66,4 +66,11 @@ public class CustomClothesActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DejanskiCustomiseActivity.class);
         startActivity(intent);
     }
+    public void start_pojdiVTitli(View v){
+            Intent intent = new Intent(this, TitleActivity.class);
+            startActivity(intent);
+    }
+    public void finishTitli(View v) {
+        CustomClothesActivity.this.finish();
+    }
 }

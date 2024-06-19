@@ -7,5 +7,6 @@ public class FaceClothe extends Clothe{
     }
     public FaceClothe(int pictureId, String name) {
         super(pictureId, name);
+
     }
 }
