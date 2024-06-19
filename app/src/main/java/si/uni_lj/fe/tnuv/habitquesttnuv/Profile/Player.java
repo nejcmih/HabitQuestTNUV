@@ -1,9 +1,10 @@
 package si.uni_lj.fe.tnuv.habitquesttnuv.Profile;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.TreeSet;
 
-public class Player {
+public class Player implements Serializable {
     private String username;
     private int streak;
     private int level;

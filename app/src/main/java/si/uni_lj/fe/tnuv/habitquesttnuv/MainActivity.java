@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -177,6 +178,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                     .beginTransaction()
                     .replace(R.id.frame_layout, goodHabitFragment)
                     .commit();
+
             return true;
         }
         else if (item.getItemId() == R.id.menu_bad) {
@@ -205,6 +207,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                     .beginTransaction()
                     .replace(R.id.frame_layout, profileFragment)
                     .commit();
+
             return true;
         }
         return false;
